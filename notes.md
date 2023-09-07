@@ -16,12 +16,15 @@ Hva med?:
 Funksjonelle krav:
 - Fahrenheit og Celsius
 - Favoritter må implementeres med cookies
+    - Legge til favoritt steder
 - Været nå, været framover
 - Historisk vær
 - Velge dag/uke
+    - Uke og dag som valg
 - Hente info om stedet(?) fra wikimedia
 - Design skal funke på både mobil og desktop
 
+Heter: Styrtregn
 
 Jesper:
 - [ ] Lage search og henting, unstyled
