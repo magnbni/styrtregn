@@ -5,10 +5,9 @@ function Fetcher() {
     const [city, setCity] = useState<String>() 
     const [printCity, setPrintCity] = useState<String | any>("No City")
     const [days, setDays] = useState<number>(1)
-    const [nameIsSet, setNameIsSet] = useState(false)
 
     let baseAPIcall : string = "https://api.weatherapi.com/v1/forecast.json?key=7a8579bd6b1743c299b82117230709&q="
-    let endQuery : string = "&days=2&aqi=no&alerts=no"
+    let endQuery : string = "&days=3&aqi=no&alerts=no"
 
     const {status, data, isLoading} = useQuery({
         queryKey: ["dayandtemp", printCity],
@@ -16,13 +15,14 @@ function Fetcher() {
             {return fetch(baseAPIcall + city + endQuery).then(res =>
             res.json()
         ).catch(error => console.log(error))},
-        initialData: "Stockholm"
+        initialData: "Stockholm",
+        refetchOnMount: false,
+        refetchOnWindowFocus: false
     })
 
     const handleSubmit = (e : React.FormEvent) => {
         e.preventDefault();
         setPrintCity(city)
-        setNameIsSet(true)
     }
 
     if (status === "error") return <h1>Waiting</h1>
@@ -31,13 +31,13 @@ function Fetcher() {
         <div>
             <form onSubmit={(e)=>handleSubmit(e)}>
                 <label>
-                    <input type="text" className="searchbar" placeholder="Skriv inn en by" onChange={(e) => {setCity(e.target.value); setNameIsSet(false)}}></input>
+                    <input type="text" className="searchbar" placeholder="Skriv inn en by" onChange={(e) => {setCity(e.target.value);}}></input>
                 </label>
                 <input type="submit" placeholder="Hei"></input>
             </form>
             <h1>{data?.location?.name}</h1>
             <ul>
-                {!isLoading ? data?.forecast?.forecastday.map((day : any) => <li key={day.date}>Date {day.date}, Temperatur: {day.day.avgtemp_c} °C</li>): <h3>Loading</h3>}
+                {!isLoading ? data?.forecast?.forecastday.map((day : any) => <li key={day.date}>Date {day.date}, Temperatur: {day.day.maxtemp_c} °C</li>): <h3>Loading</h3>}
                 {!isLoading ? <img src={data?.current?.condition.icon}></img> : <h2>Loading</h2>}
             </ul>
         </div>
