@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import { useQuery, useMutation } from "@tanstack/react-query"
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query"
 
 function Fetcher() {
     const [city, setCity] = useState<String>() 
     const [printCity, setPrintCity] = useState<String | any>("No City")
-    const [days, setDays] = useState<number>(1)
 
     let baseAPIcall : string = "https://api.weatherapi.com/v1/forecast.json?key=7a8579bd6b1743c299b82117230709&q="
     let endQuery : string = "&days=3&aqi=no&alerts=no"
