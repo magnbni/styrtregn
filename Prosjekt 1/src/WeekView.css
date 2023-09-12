@@ -15,7 +15,7 @@
     box-shadow: 0 10px 6px -6px #777;
 }
   
-.days {
+.day {
     display: flex;
     position: relative;
     flex: 1 1 0;

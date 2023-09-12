@@ -4,6 +4,7 @@ import "./WeekView.css";
 
 export default function weekView(data: any) {
   interface ForecastItem {
+    todayBoolean: boolean;
     date: string;
     day: string;
     temp: string;
@@ -22,11 +23,24 @@ export default function weekView(data: any) {
     7: "Søndag",
   };
 
+  const isToday = (date: Date) => {
+    const today = new Date();
+
+    return (
+      date.getDate() == today.getDate() &&
+      date.getMonth() == today.getMonth() &&
+      date.getFullYear() == today.getFullYear()
+    );
+  };
+
   const forecastList: ForecastItem[] = data?.forecast?.forecastday.map(
     (day: any) => ({
-      date: day.date,
-      day: DAYS[new Date(day.date).getDay()],
-      temp: `${day.day.maxtemp_c} °C`,
+      todayBoolean: isToday(new Date(day.date)),
+      date: new Date(day.date).toLocaleDateString().split(",")[0],
+      day: isToday(new Date(day.date))
+        ? "I dag"
+        : DAYS[new Date(day.date).getDay()],
+      temp: `${day.day.mintemp_c} °C / ${day.day.maxtemp_c} °C`,
       icon: day.day.condition.icon,
     })
   );
@@ -35,7 +49,11 @@ export default function weekView(data: any) {
 
   forecastList?.forEach((element: ForecastItem) => {
     days.push(
-      <div className="days" key="{item}">
+      <div
+        className="day"
+        key="{item}"
+        style={element.todayBoolean ? { background: "#d7cb8a" } : {}}
+      >
         <p>
           {element.date} <br /> {element.day}
         </p>
@@ -45,7 +63,5 @@ export default function weekView(data: any) {
     );
   });
 
-  return <div>
-    {forecastList ? <div className="week">{days}</div> : <></>}
-  </div>;
+  return <div>{forecastList ? <div className="week">{days}</div> : <></>}</div>;
 }
