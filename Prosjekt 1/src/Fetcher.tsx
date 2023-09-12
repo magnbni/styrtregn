@@ -3,12 +3,12 @@ import { useQuery } from "@tanstack/react-query";
 import weekView from "./WeekView";
 
 function Fetcher() {
-  const [city, setCity] = useState<String>();
-  const [printCity, setPrintCity] = useState<String | any>("No City");
+  const [city, setCity] = useState<string>();
+  const [printCity, setPrintCity] = useState<string | unknown>("No City");
 
-  let baseAPIcall: string =
+  const baseAPIcall: string =
     "https://api.weatherapi.com/v1/forecast.json?key=7a8579bd6b1743c299b82117230709&q=";
-  let endQuery: string = "&days=3&aqi=no&alerts=no";
+  const endQuery: string = "&days=3&aqi=no&alerts=no";
 
   const { status, data, isLoading } = useQuery({
     queryKey: ["dayandtemp", printCity],
