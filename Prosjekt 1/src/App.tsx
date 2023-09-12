@@ -3,7 +3,7 @@ import Fetcher from "./Fetcher";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Header from "./Header";
-import WeekView from "./weekView";
+import WeekView from "./WeekView";
 
 const queryClient = new QueryClient();
 
