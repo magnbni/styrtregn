@@ -6,9 +6,9 @@ function DayView(props: Day) {
     <div className="scrollhours">
         {hourly.map((hour: Hour) => <>
             <div className="hourbox">
-                <h3>{hour.time.slice(10,14)}</h3>
+                <h3>{hour.time.slice(10,16)}</h3>
                 <p>Temperatur: 27</p>
-            <img src="https://cdn-icons-png.flaticon.com/512/252/252035.png" height={50} width={50}></img>
+            <img src={hour.condition.icon} height={50} width={50}></img>
         </div>
         </>
             )}
