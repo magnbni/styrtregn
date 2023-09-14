@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import weekView from "./WeekView";
+import weekView from "./pages/WeekView";
 
 function Fetcher() {
   const [city, setCity] = useState<string>();
