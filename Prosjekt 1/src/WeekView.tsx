@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactElement } from "react";
 import "./WeekView.css";
 
@@ -10,9 +11,9 @@ export default function weekView(data: any) {
     icon: string;
   }
 
-  let days: ReactElement<any, any>[] = [];
+  const days: ReactElement<any, any>[] = [];
 
-  let DAYS: { [id: number]: string } = {
+  const DAYS: { [id: number]: string } = {
     1: "Mandag",
     2: "Tirdag",
     3: "Onsdag",
