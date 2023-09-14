@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.searchbar {
+  color: #030;
+  width: 40%;
+  height: 20%;
+  border-radius: 5px;
+  padding: 5px;
+}
