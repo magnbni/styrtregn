@@ -7,11 +7,11 @@ function DayView(props: Day) {
         {hourly.map((hour: Hour) => <>
             <div className="hourbox">
                 <h3>{hour.time.slice(10,16)}</h3>
-                <p>Temperatur: 27</p>
+                <p>{hour.temp_c}</p>
             <img src={hour.condition.icon} height={50} width={50}></img>
         </div>
         </>
-            )}
+        )}
     </div>
     );
 }
