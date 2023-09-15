@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import weekView from "./pages/WeekView";
+import "./App.css";
 
 function Fetcher() {
   const [city, setCity] = useState<string>();
@@ -32,8 +33,9 @@ function Fetcher() {
   if (status === "error") return <span>Currently struggling</span>;
 
   return (
-    <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+    <div className="searchBox">
+    <div className="search">
+    <form onSubmit={(e) => handleSubmit(e)}>
         <label>
           <input
             type="text"
@@ -44,8 +46,10 @@ function Fetcher() {
             }}
           ></input>
         </label>
-        <input type="submit" placeholder="Hei"></input>
+        <input type="submit" placeholder="Hei" className="submitButton"></input>
       </form>
+    </div>
+    <div className="favorites"><h1>Favoritter</h1></div>
       <h1>{data?.location?.name}</h1>
       {isLoading ? <span>Loading...</span> : <></>}
       {data ? weekView(data) : <></>}
