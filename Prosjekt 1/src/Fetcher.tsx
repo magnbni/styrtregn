@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import weekView from "./pages/WeekView";
+// import weekView from "./pages/WeekView";
 import "./App.css";
 import { Root, Geo } from "./types";
 
@@ -38,14 +38,6 @@ function Fetcher() {
     refetchOnWindowFocus: false,
     enabled: !!lat,
   })
-  
-  
-  
-  const baseAPIcall: string =
-    "https://api.weatherapi.com/v1/forecast.json?key=7a8579bd6b1743c299b82117230709&q=";
-  const endQuery: string = "&days=3&aqi=no&alerts=no";
-
-
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
