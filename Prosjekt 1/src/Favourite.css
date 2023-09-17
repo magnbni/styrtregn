@@ -2,7 +2,7 @@ button.favourite {
     background-color: transparent;
     border: none; 
     cursor: pointer; /* Optional: Change cursor to pointer on hover */
-  }
+}
 
 button.favourite:hover{
     border: 1px solid black;
