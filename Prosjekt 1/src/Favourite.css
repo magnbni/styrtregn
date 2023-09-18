@@ -67,5 +67,4 @@ header.favourite {
 .favouriteElement {
     display: flex;
     flex-direction: column;
-
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Favourite.css";
-import weekView from "./pages/WeekView";
 
 export function FavouriteButton(isFavourite: boolean) {
   // Use the useState hook to manage the favorite state
@@ -31,7 +30,14 @@ export default function Favourites() {
           {FavouriteButton(true)}
           <h2>Oslo</h2>
         </div>
-        <div className="favouriteElement">{/* </div>{weekView()} */}</div>
+        <h2>dummy element</h2>
+      </div>
+      <div className="favouriteElement">
+        <div className="favouriteName">
+          {FavouriteButton(true)}
+          <h2>Bergen</h2>
+        </div>
+        <h2>dummy element</h2>
       </div>
     </div>
   );
