@@ -1,7 +1,13 @@
 button.favourite {
     background-color: transparent;
     border: none; 
-    cursor: pointer; /* Optional: Change cursor to pointer on hover */
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex; /* Use flexbox layout for the container */
+    align-items: center; /* Vertically center items within the container */
+    justify-content: center; /* Horizontally center items within the container */
+    margin-right: 10px;
 }
 
 button.favourite:hover{
@@ -13,6 +19,53 @@ button.favourite:focus{
     outline: none;
 }
 
-img{
-    background-color: transparent;
+img.favourite {
+    height: 35px;
+    width: 35px;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+
+.favourites {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 200px;
+    left: 10%;
+    background-color: white;
+    color: black;
+}
+
+header.favourite {
+    display: flex;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 3.2em;
+}
+
+.favouriteForecast {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.favouriteName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    left: 10px;
+    justify-content: start;
+}
+
+.favouriteElement {
+    display: flex;
+    flex-direction: column;
+
 }

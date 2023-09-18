@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import './Favourite.css';
+import { useState } from "react";
+import "./Favourite.css";
+import weekView from "./pages/WeekView";
 
-interface FavouriteProps {
-  isFavourite: boolean; // Specify the prop type as boolean
-}
-
-export default function Favourite({ isFavourite }: FavouriteProps) {
+export function FavouriteButton(isFavourite: boolean) {
   // Use the useState hook to manage the favorite state
   const [favourite, setFavorite] = useState(isFavourite);
 
@@ -14,9 +11,28 @@ export default function Favourite({ isFavourite }: FavouriteProps) {
     setFavorite(!favourite);
   };
 
-  return (      
+  return (
     <button className="favourite" onClick={handleClick}>
-      {favourite ? <img src={"lover.png"} className="img" alt="icon" /> : <img src={"notlover.png"} className="img" alt="icon" />}
+      {favourite ? (
+        <img src={"lover.png"} className="favourite" alt="icon" />
+      ) : (
+        <img src={"notlover.png"} className="favourite" alt="icon" />
+      )}
     </button>
-  )
+  );
+}
+
+export default function Favourites() {
+  return (
+    <div className="favourites">
+      <header className="favourite">Favoritter</header>
+      <div className="favouriteElement">
+        <div className="favouriteName">
+          {FavouriteButton(true)}
+          <h2>Oslo</h2>
+        </div>
+        <div className="favouriteElement">{/* </div>{weekView()} */}</div>
+      </div>
+    </div>
+  );
 }
