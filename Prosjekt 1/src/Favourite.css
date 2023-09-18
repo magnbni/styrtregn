@@ -31,9 +31,8 @@ img.favourite {
     display: flex;
     position: absolute;
     flex-direction: column;
-    top: 200px;
-    left: 10%;
-    background-color: white;
+    top: 20%;
+    left: 2%;
     color: black;
 }
 
@@ -48,19 +47,13 @@ header.favourite {
 .favouriteForecast {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
+    margin-left: 5px;
 }
 
 .favouriteName {
     display: flex;
     flex-direction: row;
     align-items: center;
-    left: 10px;
     justify-content: start;
 }
 

@@ -30,14 +30,18 @@ export default function Favourites() {
           {FavouriteButton(true)}
           <h2>Oslo</h2>
         </div>
-        <h2>dummy element</h2>
+        <div className="favouriteForecast">
+          <h2>dummy element</h2>
+        </div>
       </div>
       <div className="favouriteElement">
         <div className="favouriteName">
           {FavouriteButton(true)}
           <h2>Bergen</h2>
         </div>
-        <h2>dummy element</h2>
+        <div className="favouriteForecast">
+          <h2>dummy element</h2>
+        </div>
       </div>
     </div>
   );
