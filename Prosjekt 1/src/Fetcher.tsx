@@ -8,15 +8,18 @@ function Fetcher() {
   const [city, setCity] = useState<string>();
   const [printCity, setPrintCity] = useState<string | unknown>();
   
+  // Fetch function for the geolocation
   const fetchGeocode = (): Promise<Geo | void> => fetch(geoCode, {
     credentials: "same-origin",
   })
     .then((res) => res.json()).then((res)=>res[0]).then((data) => data as Geo)
     .catch((error) => console.log(error));
 
+  // Fetch function for the metorological data
   const fetchMetData = (): Promise<Root | void> => 
       fetch(metApiCall).then((res)=> res.json()).then((data)=> data as Root);
   
+  // Query for geolocation
   const { status: statusLocation, data: geoCodeData } = useQuery({
     queryKey: ["geoCode", printCity],
     queryFn: fetchGeocode,
@@ -31,6 +34,7 @@ function Fetcher() {
   
   const metApiCall: string = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${lat}&lon=${lon}`;
   
+  // Dependent query for meterological data
   const { status: statusMetCall, data: metData } = useQuery({
     queryKey: ["metData", printCity],
     queryFn: fetchMetData,
@@ -68,8 +72,10 @@ function Fetcher() {
       <ul>
         {statusMetCall === "loading" ? <p>Loading...</p> : metData?.properties.timeseries
         .filter(function (day: Series) {
+          // Regular expression to only map 12 O'clock 12-hour forecast
           return (/12:00/.test(day.time))
         })
+        // Simply prints the symbol as a string, this can be used as img src if we have WeatherIcons library
       .map((day)=><p>{day.data.next_12_hours?.summary.symbol_code} på dato: {day.time}</p>)
       }
       </ul>
