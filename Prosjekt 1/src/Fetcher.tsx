@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 // import weekView from "./pages/WeekView";
 import "./App.css";
-import { Root, Geo } from "./types";
+import { Root, Geo, Series } from "./types";
 
 function Fetcher() {
   const [city, setCity] = useState<string>();
@@ -65,7 +65,14 @@ function Fetcher() {
       </form>
     </div>
     <div className="favorites"><h1>Favoritter</h1></div>
-      <ul>{statusMetCall === "loading" ? <p>Loading...</p> : metData?.properties.timeseries.map((day)=><p>{day.time}</p>)}</ul>
+      <ul>
+        {statusMetCall === "loading" ? <p>Loading...</p> : metData?.properties.timeseries
+        .filter(function (day: Series) {
+          return (/12:00/.test(day.time))
+        })
+      .map((day)=><p>{day.data.next_12_hours?.summary.symbol_code} på dato: {day.time}</p>)
+      }
+      </ul>
     </div>
   );
 }
