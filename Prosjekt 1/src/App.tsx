@@ -5,6 +5,7 @@ import {
   Routes, Route
 } from "react-router-dom"
 import Header from "./Header";
+import Favourites from "./Favourite";
 import Root from "./routes/root";
 import Location from "./routes/location";
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <Header />
+      <Favourites />
       <div>
         <QueryClientProvider client={queryClient}>
           <Routes>

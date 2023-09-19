@@ -49,7 +49,6 @@ function Fetcher() {
         <input type="submit" placeholder="Hei" className="submitButton"></input>
       </form>
     </div>
-    <div className="favorites"><h1>Favoritter</h1></div>
       <h1>{data?.location?.name}</h1>
       {isLoading ? <span>Loading...</span> : <></>}
       {data ? weekView(data) : <></>}
