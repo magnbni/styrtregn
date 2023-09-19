@@ -13,9 +13,9 @@ export function FavouriteButton(isFavourite: boolean) {
   return (
     <button className="favourite" onClick={handleClick}>
       {favourite ? (
-        <img src={"lover.png"} className="favourite" alt="icon" />
+        <img src={"heart_filled.svg"} className="favourite" alt="icon" />
       ) : (
-        <img src={"notlover.png"} className="favourite" alt="icon" />
+        <img src={"heart.svg"} className="favourite" alt="icon" />
       )}
     </button>
   );
