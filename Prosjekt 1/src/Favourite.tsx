@@ -31,10 +31,15 @@ export function FavouriteButton({ city }: { city: string }) {
   );
 }
 
+function capitalizeFirstLetter(str: string) {
+  return str
+    .split(" ") // Split the string into an array of words
+    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+    .join(" "); // Join the words back together into a single string
+}
+
 export default function Favourites() {
-  console.log(Object.keys(localStorage))
-  const [cities, setCities] = useState(Object.keys(localStorage));
-  console.log(cities)
+  const [cities] = useState(Object.keys(localStorage));
 
   const favouriteCities: ReactElement<string, string>[] = [];
 
@@ -43,7 +48,7 @@ export default function Favourites() {
       <div className="favouriteElement">
         <div className="favouriteName">
         {<FavouriteButton city={key} />}
-          <h2>{key}</h2>
+          <h2>{capitalizeFirstLetter(key)}</h2>
         </div>
         <div className="favouriteForecast">
           <h2>dummy element</h2>
