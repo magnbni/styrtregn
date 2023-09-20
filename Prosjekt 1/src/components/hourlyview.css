@@ -4,6 +4,7 @@
     color: white;
     top: -10px;
     right: -10px;
+    padding-top: 100px;
 }
 
 .hour-wrapper {
@@ -33,4 +34,7 @@ tr {
     background: white;
     padding: 10%;
     width: max-content;
+    overflow: scroll;
+    height: 500px;
+    background-color: rgb(109, 104, 193);
 }

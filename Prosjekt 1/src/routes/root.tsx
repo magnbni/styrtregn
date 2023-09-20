@@ -41,7 +41,7 @@ export default function Root() {
             </form>
         </div>
         {statusMetCall === "success" && metData ? 
-        <HourlyView showBoolean={false} metData={metData?.properties} day={metData.properties.timeseries[10].time}></HourlyView> 
+        <HourlyView showBoolean={false} metData={metData?.properties} day={metData.properties.timeseries[10].time}/> 
         : <h2>Loading...</h2>}
         </>
     )

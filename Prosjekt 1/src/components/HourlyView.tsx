@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./hourlyview.css"
 import { Properties } from "../types";
+import FetchIcon from "../FetchIcon";
 
 /**
  * This function returns a component that only shows the hourly forecast per
@@ -29,7 +30,7 @@ function HourlyView(props: {showBoolean: boolean, metData: Properties, day: stri
                 <tr key="time">
                     <td>{res.time.slice(11,16)}</td>
                     {/* Insert weathericon here */}
-                    <td>{res.data.next_1_hours?.summary.symbol_code}</td>
+                    {res.data.next_1_hours?.summary.symbol_code ? FetchIcon(res.data.next_1_hours?.summary.symbol_code) : <></>}
                     <td>{res.data.instant.details.air_temperature} °C</td>
                     <td>{res.data.next_1_hours?.details.precipitation_amount}</td>
                     <td>{res.data.instant.details.wind_speed}</td>
