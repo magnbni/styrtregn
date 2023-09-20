@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
+    <div className="main-root">
       <Header />
       <div>
         <QueryClientProvider client={queryClient}>
@@ -23,7 +23,7 @@ function App() {
         </QueryClientProvider>
       </div>
       <Favourites />
-    </>
+    </div>
   );
 }
 
