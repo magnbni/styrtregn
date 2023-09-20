@@ -17,7 +17,6 @@ function HourlyView(props: {showBoolean: boolean, metData: Properties, day: stri
     
     const { metData, day} = props;
     const [showHours, setShowHours] = useState<boolean>(props.showBoolean);
-    const dato: string = "23. September"
 
     const handleClick = () => {
         setShowHours(true)

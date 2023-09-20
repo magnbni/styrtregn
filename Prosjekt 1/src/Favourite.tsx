@@ -1,6 +1,5 @@
 import { ReactElement, useState } from "react";
 import "./Favourite.css";
-import DetailedWeekView from "./pages/DetailedWeekView";
 
 export function FavouriteButton({ city }: { city: string }) {
   // Use the useState hook to manage the favorite state
@@ -49,7 +48,7 @@ export default function Favourites() {
           {<FavouriteButton city={key} />}
           <h2>{capitalizeFirstLetter(key)}</h2>
         </div>
-        <div className="favouriteForecast">{DetailedWeekView()}</div>
+        <div className="favouriteForecast">Hei</div>
       </div>
     );
   });
