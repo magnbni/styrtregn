@@ -2,7 +2,6 @@ import "./DetailedWeekView.css";
 import clearsky from "../weathericons-svg/clearsky_day.svg";
 
 export default function DetWeekView() {
-
   return (
     <div className="detcomp">
       <div className="detrow">
@@ -16,7 +15,6 @@ export default function DetWeekView() {
         <p className="detcell">Vind</p>
       </div>
       <div className="detrow">
-        <p className="detcell">11.02.23 Mandag</p>
         <p className="detcell">11.02.23 Mandag</p>
         <img src={clearsky} className="detcell" alt="icon" />
         <p className="detcell">Icon 2</p>
