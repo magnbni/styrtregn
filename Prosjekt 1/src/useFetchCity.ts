@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Root, Geo } from "./types";
 
 
-const useFetchCity = (printCity: string) => {
+const useFetchCity = (printCity: string | undefined) => {
   
   // Fetch function for the geolocation
   const fetchGeocode = (): Promise<Geo | void> => fetch(geoCode, {
