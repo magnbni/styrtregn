@@ -1,8 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./hourlyview.css"
 import { Properties } from "../types";
 
+/**
+ * This function returns a component that only shows the hourly forecast per
+ * given date.
+ * 
+ * @param props 
+ * @param showBoolean: boolean
+ * @param metData: Properties
+ * @param day: string
+ * @returns
+ */
 function HourlyView(props: {showBoolean: boolean, metData: Properties, day: string}) {
+    
     const { metData, day} = props;
     const [showHours, setShowHours] = useState<boolean>(props.showBoolean);
     const dato: string = "23. September"
