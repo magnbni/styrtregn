@@ -5,10 +5,11 @@
     background-color: #EFE7BC;
     border-radius: 10px;
     height: 300px;
-    width: 100%;
+    width: 96%;
     overflow-y: auto;
     justify-content: space-between; /* Space between rows */
-    padding: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .detrow {
