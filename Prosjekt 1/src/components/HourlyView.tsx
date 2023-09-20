@@ -23,12 +23,9 @@ function HourlyView(props: {showBoolean: boolean, metData: Properties, day: stri
     }
 
     const returnTableData = () => {
-        console.log(day?.slice(0,10))
-        console.log(metData.timeseries[0].time.slice(0,10))
         return metData.timeseries.filter(e => e.time.slice(0,10) == day.slice(0,10)).map(
             (res) =>
             <>
-                {console.log(res)}
                 <tr key="time">
                     <td>{res.time.slice(11,16)}</td>
                     {/* Insert weathericon here */}
