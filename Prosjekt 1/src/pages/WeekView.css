@@ -1,5 +1,10 @@
+.comp {
+    padding-top: 150px;
+}
+
+
 .week {
-    position: fixed;
+    position: relative;
     height: 250px;
     left: 2.5%;
     width: 95%;

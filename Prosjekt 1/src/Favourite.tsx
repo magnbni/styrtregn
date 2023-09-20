@@ -44,21 +44,12 @@ export default function Favourites() {
 
   cities.forEach(function (key) {
     favouriteCities.push(
-      <div>
-        <div className="favouriteElement">
-          <div className="favouriteName">
-            {<FavouriteButton city={key} />}
-            <h2>{capitalizeFirstLetter(key)}</h2>
-          </div>
-          <div className="favouriteForecast">{DetailedWeekView()}</div>
+      <div className="favouriteElement">
+        <div className="favouriteName">
+          {<FavouriteButton city={key} />}
+          <h2>{capitalizeFirstLetter(key)}</h2>
         </div>
-        <div className="favouriteElement">
-          <div className="favouriteName">
-            {<FavouriteButton city={key} />}
-            <h2>{capitalizeFirstLetter(key)}</h2>
-          </div>
-          <div className="favouriteForecast">{DetailedWeekView()}</div>
-        </div>
+        <div className="favouriteForecast">{DetailedWeekView()}</div>
       </div>
     );
   });
