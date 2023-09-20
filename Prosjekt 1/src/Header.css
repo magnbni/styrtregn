@@ -1,6 +1,9 @@
 .header {
     display: flex;
     flex-direction: row;
+    z-index: 99999999999;
+    background-color: rgb(109, 106, 174);
+    filter: drop-shadow(0 0 4em #646cffaa);
 }
   
 img {
