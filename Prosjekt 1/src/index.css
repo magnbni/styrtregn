@@ -18,19 +18,11 @@ body {
   background-color: #d5dfe6;
 }
 
-.header {
+.root {
   display: flex;
-  position: fixed;
-  background-color: #f1f3f5;
-  top: 0;
-  left: 0;
-  height: 4rem;
+  flex-direction: column;
   width: 100%;
-  border: 1px solid #d5dfe6;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  z-index: 1;
+  align-items: center;
 }
 
 button {
@@ -50,11 +42,38 @@ button:active {
   background-color: #1e3a93;
 }
 
+.header {
+  display: flex;
+  position: fixed;
+  background-color: #f1f3f5;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  width: 100%;
+  border: 1px solid #d5dfe6;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  z-index: 1;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
 .content {
+  position: absolute;
   display: block;
   background-color: #f1f3f5;
-  margin-top: 4rem;
+  top: 0;
+  bottom: 0;
   width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+  margin: 4rem auto 0 auto;
 }
 
 .icon {
@@ -79,6 +98,5 @@ button:active {
 
   .content {
     max-width: 800px;
-    margin: 4rem auto 0 auto;
   }
 }
