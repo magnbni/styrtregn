@@ -47,7 +47,7 @@ function Fetcher() {
             }}
           ></input>
         </label>
-        <input type="submit" placeholder="Hei" className="submitButton"></input>
+        <input type="submit" placeholder="Hei" className="submitButton" value="Søk"/>
       </form>
     </div>
       <h1>{data?.location?.name}</h1>
