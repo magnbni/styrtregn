@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react";
 import "./Favourite.css";
 
-export function FavouriteButton(city: string) {
+export function FavouriteButton({ city }: { city: string }) {
   // Use the useState hook to manage the favorite state
   const localFavourite: boolean = localStorage.getItem(city.toLowerCase())
     ? true
@@ -13,7 +13,7 @@ export function FavouriteButton(city: string) {
     // Toggle the favourite state when the button is clicked
     if (localFavourite) {
       localStorage.removeItem(city.toLowerCase());
-      setCities(Object.keys(localStorage));
+      
     } else {
       localStorage.setItem(city.toLowerCase(), "true");
     }
@@ -32,20 +32,17 @@ export function FavouriteButton(city: string) {
 }
 
 export default function Favourites() {
-
+  console.log(Object.keys(localStorage))
   const [cities, setCities] = useState(Object.keys(localStorage));
+  console.log(cities)
 
-  const favouriteCities: ReactElement<any, any>[] = [];
-  localStorage.setItem("test", "true");
-  localStorage.setItem("test2", "true");
-  localStorage.setItem("test3", "true");
-  console.log(localStorage);
+  const favouriteCities: ReactElement<string, string>[] = [];
 
   cities.forEach(function (key) {
     favouriteCities.push(
       <div className="favouriteElement">
         <div className="favouriteName">
-          {FavouriteButton(key)}
+        {<FavouriteButton city={key} />}
           <h2>{key}</h2>
         </div>
         <div className="favouriteForecast">
