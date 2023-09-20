@@ -73,7 +73,6 @@ import snowshowersandthunder_day from "./weathericons-svg/snowshowersandthunder_
 import snowshowersandthunder_night from "./weathericons-svg/snowshowersandthunder_night.svg";
 import snowshowersandthunder_polartwilight from "./weathericons-svg/snowshowersandthunder_polartwilight.svg";
 
-import "./FetchIcon.css";
 
 type Icons = {
   [key: string]: string; // Assuming all icons are strings
