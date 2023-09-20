@@ -41,7 +41,7 @@ function HourlyView(props: {showBoolean: boolean, metData: Properties, day: stri
     if (showHours){
         return (
             <div className="overlay">
-                <h2>Været {dato}</h2>
+                <h2>Været {day.slice(0,10)}</h2>
                 <div className="fluid-table">
                     <div className="table-container">
                     <table className="table2">
