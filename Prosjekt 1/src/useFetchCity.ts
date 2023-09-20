@@ -23,7 +23,7 @@ const useFetchCity = (printCity: string | undefined) => {
     refetchOnWindowFocus: false,
   });
 
-  if (statusLocation === "error"){
+  if (statusLocation === "error" || geoCodeData === undefined){
     console.log("Something went wrong with the location fetch")
   }
 

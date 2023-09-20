@@ -96,3 +96,11 @@ export interface Root {
   export interface Details3 {
     precipitation_amount: number
   }
+
+  export type DayView = {
+    date: string;
+    rain: number | undefined;
+    wind: number;
+    maxTemp: number;
+    symbol: string | undefined;
+  }[] | undefined

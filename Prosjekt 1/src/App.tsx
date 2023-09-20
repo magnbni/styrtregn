@@ -19,10 +19,10 @@ function App() {
             <Route path="/" element={<Root />} />
             <Route path="/:id" element={<Location />} />
           </Routes>
+          <Favourites />
           <ReactQueryDevtools></ReactQueryDevtools>
         </QueryClientProvider>
       </div>
-      <Favourites />
     </div>
   );
 }

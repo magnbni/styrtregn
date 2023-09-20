@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./root.css"
-import Fetcher from "../Fetcher";
-import { Link } from "react-router-dom";
 import useFetchCity from "../useFetchCity";
 import HourlyView from "../components/HourlyView";
+import DetailedWeekView from "../pages/DetailedWeekView";
 
 export default function Root() {
     const [city, setCity] = useState<string>();
@@ -20,6 +19,25 @@ export default function Root() {
 
     const { statusMetCall, metData } = useFetchCity(printCity)
       
+    const dayView = metData?.properties.timeseries.map(function(day){
+        return {
+            date: day.time.slice(0,10),
+            rain: day.data.next_6_hours?.details.precipitation_amount,
+            wind: day.data.instant.details.wind_speed,
+            symbol: day.data.next_12_hours?.summary.symbol_code,
+            maxTemp: metData.properties.timeseries.filter(function(o){
+                return o.time === day.time
+            }).reduce(function(max, o){
+                if(max < o.data.instant.details.air_temperature){
+                    return o.data.instant.details.air_temperature
+                }
+                return max
+            },-273)
+        }
+    }).filter((obj, pos, arr) => {
+        return arr.map(mapObj => mapObj.date).indexOf(obj.date) == pos;
+    });
+
     useEffect(()=>{
     },[printCity])
 
@@ -43,6 +61,9 @@ export default function Root() {
         {statusMetCall === "success" && metData ? 
         <HourlyView showBoolean={false} metData={metData?.properties} day={metData.properties.timeseries[10].time}/> 
         : <h2>Loading...</h2>}
+        {dayView != undefined && statusMetCall === "success" && metData ? 
+        <DetailedWeekView dayView={dayView} rawData={metData?.properties}></DetailedWeekView> : 
+        <></>}
         </>
     )
 }
