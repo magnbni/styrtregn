@@ -1,7 +1,7 @@
 import { rest } from 'msw'
 
-const geoPath = ''
-const metPath = ''
+const geoPath = 'https://eu1.locationiq.com/v1/search?key=pk.3e21916e151f4d42374fdc631eded07a'
+const metPath = 'https://api.met.no/weatherapi/locationforecast/2.0/compact'
 
 export const fetchMetData_incomplete_response = rest.get(metPath, async (req, res, ctx) => {
     return res(
@@ -15,12 +15,14 @@ export const fetchMetData_incomplete_response = rest.get(metPath, async (req, re
 })
 
 export const fetchGeo_success_response = rest.get(geoPath, async (req, res, ctx) => {
+    const data = req.url.searchParams.get('q')
     return res(
         ctx.status(200),
         ctx.json([
             {
-                lat: 'CHANGE DEFAULT',
-                lon: 'CHANGE DEFAULT'
+                city: data,
+                lat: '59.9133301',
+                lon: '10.7389701'
             }
         ])
     )
