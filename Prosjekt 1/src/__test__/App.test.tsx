@@ -1,8 +1,8 @@
 import { it, expect } from 'vitest'
-import { mswServer } from '../test/mockHTTPserver'
-import { fetchGeo_success_response } from '../test/handlers'
+import { render } from "@testing-library/react"
+import App from '../App'
 
-it('useFetchCity should return correct things', async () => {
-    mswServer.use(fetchGeo_success_response)
-    expect("hello", "hello")
+it('App should exist', async () => {
+    const wrapper = render(<App/>)
+    expect(wrapper).toBeDefined()
 })

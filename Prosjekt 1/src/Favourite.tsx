@@ -1,7 +1,6 @@
 import { ReactElement, useState } from "react";
 import "./Favourite.css";
 import FavoriteView from "./FavouriteView";
-import useFetchCity from "./useFetchCity";
 
 export function FavouriteButton({ city }: { city: string }) {
   // Use the useState hook to manage the favorite state
