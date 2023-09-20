@@ -1,4 +1,3 @@
-
 # Styrtregn - A weather forecast web application
 
 Styrtregn is an interactive web appliaciton for weather forecasts. It utilizes the MET Weather API to gather forecast data about any location that a user chooses.
@@ -29,3 +28,7 @@ cd Prosjekt -1
 npm install 
 npm run test
 ```
+
+## HTML Web storage api
+The application implements localstorage to save favourites. These are saved by pressing the heart-button.
+Sessionstorage storage is not implemented as it wasn't viewed as relevant to the application.
