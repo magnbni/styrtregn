@@ -18,6 +18,13 @@ body {
   background-color: #d5dfe6;
 }
 
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
 button {
   color: white;
   background-color: #395dd3;
@@ -54,16 +61,19 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 0.5rem;
 }
 
 .content {
+  position: absolute;
   display: block;
   background-color: #f1f3f5;
-  margin-top: 4rem;
+  top: 0;
+  bottom: 0;
   width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+  margin: 4rem auto 0 auto;
 }
 
 .icon {
@@ -88,6 +98,5 @@ button:active {
 
   .content {
     max-width: 800px;
-    margin: 4rem auto 0 auto;
   }
 }

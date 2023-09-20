@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="main-root">
+    <div className="root">
       <Header />
       <div className="content">
         <QueryClientProvider client={queryClient}>
@@ -42,7 +42,7 @@ function App() {
                     }}
                 ></input>
                 </label>
-                <input type="submit" placeholder="Hei" className="submitButton"></input>
+                <input type="submit" className="submitButton"></input>
             </form>
           </div>
         </div>
@@ -50,7 +50,7 @@ function App() {
             <Route path="/project1" element={<Root />} />
             <Route path="/project1/:id" element={<Location />} />
           </Routes>
-          <ReactQueryDevtools></ReactQueryDevtools>
+          {/* <ReactQueryDevtools></ReactQueryDevtools> */}
         </QueryClientProvider>
       </div>
     </div>
