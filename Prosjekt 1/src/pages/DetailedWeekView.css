@@ -5,7 +5,6 @@
     border-radius: 10px;
     width: 96%;
     overflow-y: auto;
-    margin-top: 170px;
     padding-left: 2%;
     padding-right: 2%;
 }
@@ -23,7 +22,7 @@
     justify-content: center;
     flex: 1; /* To distribute cell space evenly */
     margin: 0 2%; /* Add some margin for space between cells */
-    color: white;
+    /* color: white; */
 }
 
 

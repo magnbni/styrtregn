@@ -1,11 +1,11 @@
-import "./App.css";
+import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import Favourites from "./Favourite";
 import Root from "./routes/root";
 import Location from "./routes/location";
+import Favourites from "./Favourite";
 
 const queryClient = new QueryClient();
 
@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="main-root">
       <Header />
-      <div>
+      <div className="content">
         <QueryClientProvider client={queryClient}>
           <Routes>
-            <Route path="/" element={<Root />} />
-            <Route path="/:id" element={<Location />} />
+            <Route path="/project1" element={<Root />} />
+            <Route path="/project1/:id" element={<Location />} />
           </Routes>
-          <Favourites />
+          <Favourites/>
           <ReactQueryDevtools></ReactQueryDevtools>
         </QueryClientProvider>
       </div>
