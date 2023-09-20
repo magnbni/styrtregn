@@ -34,35 +34,25 @@ function Fetcher() {
   if (status === "error") return <span>Currently struggling</span>;
 
   return (
-    <div>
-      <div className="searchBox">
-        <div className="search">
-          <form onSubmit={(e) => handleSubmit(e)}>
-            <label>
-              <input
-                type="text"
-                className="searchbar"
-                placeholder="Skriv inn en by"
-                onChange={(e) => {
-                  setCity(e.target.value);
-                }}
-              ></input>
-            </label>
-            <input
-              type="submit"
-              placeholder="Hei"
-              className="submitButton"
-              value="Søk"
-            />
-          </form>
-        </div>
-
-        {isLoading ? <span>Loading...</span> : <></>}
-      </div>
-      <div className="comp">
-        <h1>{data?.location?.name && <FavouriteButton city={data.location.name} />}{data?.location?.name}</h1>
-        {data ? weekView(data) : <></>}
-      </div>
+    <div className="searchBox">
+    <div className="search">
+    <form onSubmit={(e) => handleSubmit(e)}>
+        <label>
+          <input
+            type="text"
+            className="searchbar"
+            placeholder="Skriv inn en by"
+            onChange={(e) => {
+              setCity(e.target.value);
+            }}
+          ></input>
+        </label>
+        <input type="submit" placeholder="Hei" className="submitButton" value="Like"/>
+      </form>
+    </div>
+      <h1>{data?.location?.name}{data?.location?.name && <FavouriteButton city={data.location.name} />}</h1>
+      {isLoading ? <span>Loading...</span> : <></>}
+      {data ? weekView(data) : <></>}
     </div>
   );
 }
