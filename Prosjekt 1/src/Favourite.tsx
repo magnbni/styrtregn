@@ -1,5 +1,7 @@
 import { ReactElement, useState } from "react";
 import "./Favourite.css";
+import FavoriteView from "./FavouriteView";
+import useFetchCity from "./useFetchCity";
 
 export function FavouriteButton({ city }: { city: string }) {
   // Use the useState hook to manage the favorite state
@@ -37,18 +39,21 @@ function capitalizeFirstLetter(str: string) {
 }
 
 export default function Favourites() {
-  const [cities] = useState(Object.keys(localStorage));
+    const [cities] = useState(Object.keys(localStorage));
 
   const favouriteCities: ReactElement<string, string>[] = [];
 
   cities.forEach(function (key) {
+
     favouriteCities.push(
       <div className="favouriteElement">
         <div className="favouriteName">
           {<FavouriteButton city={key} />}
           <h2>{capitalizeFirstLetter(key)}</h2>
         </div>
-        <div className="favouriteForecast">Hei</div>
+        <div className="favouriteForecast">
+          <FavoriteView city={capitalizeFirstLetter(key)}></FavoriteView>
+        </div>
       </div>
     );
   });

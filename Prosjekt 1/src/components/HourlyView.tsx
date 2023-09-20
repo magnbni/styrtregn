@@ -29,9 +29,9 @@ function HourlyView(props: {showBoolean: boolean, metData: Properties, day: stri
                 <tr key="time">
                     <td>{res.time.slice(11,16)}</td>
                     {/* Insert weathericon here */}
-                    {res.data.next_1_hours?.summary.symbol_code ? FetchIcon(res.data.next_1_hours?.summary.symbol_code) : <></>}
+                    {res.data.next_1_hours?.summary.symbol_code ? FetchIcon(res.data.next_1_hours?.summary.symbol_code) : <p>No Icon</p>}
                     <td>{res.data.instant.details.air_temperature} °C</td>
-                    <td>{res.data.next_1_hours?.details.precipitation_amount}</td>
+                    <td>{ res.data.next_1_hours?.details.precipitation_amount ? res.data.next_1_hours.details.precipitation_amount : res.data.next_6_hours?.details.precipitation_amount}</td>
                     <td>{res.data.instant.details.wind_speed}</td>
                 </tr>
             </>

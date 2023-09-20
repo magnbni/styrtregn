@@ -63,7 +63,7 @@ export default function Root() {
         : <h2>Loading...</h2>}
         {dayView != undefined && statusMetCall === "success" && metData ? 
         <DetailedWeekView dayView={dayView} rawData={metData?.properties}></DetailedWeekView> : 
-        <p>Loading...</p>}
+        <></>}
         </>
     )
 }
