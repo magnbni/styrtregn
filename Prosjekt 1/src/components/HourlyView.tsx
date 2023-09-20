@@ -62,7 +62,7 @@ function HourlyView(props: {showBoolean: boolean, metData: Properties, day: stri
                     </table>
                     </div>
                 </div>
-                <button className="closeoverlay" onClick={(e) => setShowHours(false)}>X</button>
+                <button className="closeoverlay" onClick={() => setShowHours(false)}>X</button>
             </div>
         );
     }
