@@ -47,7 +47,7 @@ function Fetcher() {
             }}
           ></input>
         </label>
-        <input type="submit" placeholder="Hei" className="submitButton"></input>
+        <input type="submit" placeholder="Hei" className="submitButton" value="Like"/>
       </form>
     </div>
       <h1>{data?.location?.name}{data?.location?.name && <FavouriteButton city={data.location.name} />}</h1>
