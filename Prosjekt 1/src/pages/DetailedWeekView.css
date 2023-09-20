@@ -17,6 +17,9 @@
     border-bottom: 2px solid black;
 }
 
+
+
+
 .detcell {
     display: flex;
     align-items: center;
@@ -24,4 +27,9 @@
     flex: 1; /* To distribute cell space evenly */
     margin: 0 2%; /* Add some margin for space between cells */
     color: white;
+}
+
+
+.weathericon {
+    width: 90%;
 }

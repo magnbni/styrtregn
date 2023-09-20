@@ -73,6 +73,8 @@ import snowshowersandthunder_day from "./weathericons-svg/snowshowersandthunder_
 import snowshowersandthunder_night from "./weathericons-svg/snowshowersandthunder_night.svg";
 import snowshowersandthunder_polartwilight from "./weathericons-svg/snowshowersandthunder_polartwilight.svg";
 
+import "./FetchIcon.css";
+
 type Icons = {
   [key: string]: string; // Assuming all icons are strings
 };
@@ -161,6 +163,5 @@ const icons: Icons = {
 };
 
 export default function FetchIcon(iconName: string) {
-  return <img src={icons[iconName]} className="detcell" alt="icon" />
-
+  return <img src={icons[iconName]} className="weathericon" alt="icon" />;
 }
