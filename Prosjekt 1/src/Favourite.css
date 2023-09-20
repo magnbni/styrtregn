@@ -32,7 +32,6 @@ img.favourite {
     position: relative;
     flex-direction: column;
     padding-top: 15px;
-    margin-top: 70px;
     left: 2%;
     color: black;
     overflow: auto;
