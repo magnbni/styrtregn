@@ -29,11 +29,12 @@ img.favourite {
 
 .favourites {
     display: flex;
-    position: absolute;
+    position: relative;
     flex-direction: column;
-    top: 20%;
+    padding-top: 150px;
     left: 2%;
     color: black;
+    overflow: auto;
 }
 
 header.favourite {

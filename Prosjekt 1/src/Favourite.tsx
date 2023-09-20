@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 import "./Favourite.css";
+import DetailedWeekView from "./pages/DetailedWeekView";
 
 export function FavouriteButton({ city }: { city: string }) {
   // Use the useState hook to manage the favorite state
@@ -8,12 +9,10 @@ export function FavouriteButton({ city }: { city: string }) {
     : false;
   const [favourite, setFavorite] = useState(localFavourite);
 
-
   const handleClick = () => {
     // Toggle the favourite state when the button is clicked
     if (localFavourite) {
       localStorage.removeItem(city.toLowerCase());
-      
     } else {
       localStorage.setItem(city.toLowerCase(), "true");
     }
@@ -45,13 +44,20 @@ export default function Favourites() {
 
   cities.forEach(function (key) {
     favouriteCities.push(
-      <div className="favouriteElement">
-        <div className="favouriteName">
-        {<FavouriteButton city={key} />}
-          <h2>{capitalizeFirstLetter(key)}</h2>
+      <div>
+        <div className="favouriteElement">
+          <div className="favouriteName">
+            {<FavouriteButton city={key} />}
+            <h2>{capitalizeFirstLetter(key)}</h2>
+          </div>
+          <div className="favouriteForecast">{DetailedWeekView()}</div>
         </div>
-        <div className="favouriteForecast">
-          <h2>dummy element</h2>
+        <div className="favouriteElement">
+          <div className="favouriteName">
+            {<FavouriteButton city={key} />}
+            <h2>{capitalizeFirstLetter(key)}</h2>
+          </div>
+          <div className="favouriteForecast">{DetailedWeekView()}</div>
         </div>
       </div>
     );

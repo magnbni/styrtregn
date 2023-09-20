@@ -3,9 +3,8 @@
     flex-direction: column;
     position: relative;
     border-radius: 10px;
-    height: 300px;
     width: 96%;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-left: 2%;
     padding-right: 2%;
 }
@@ -16,9 +15,6 @@
     justify-content: space-between; /* Space between cells */
     border-bottom: 2px solid black;
 }
-
-
-
 
 .detcell {
     display: flex;

@@ -1,6 +1,6 @@
 body{
-  background: rgb(16,9,131);
-  background: linear-gradient(336deg, rgba(16,9,131,1) 0%, rgba(22,22,187,1) 35%, rgba(0,212,255,1) 100%);
+  background-color: rgb(109, 106, 174);
+  /* background: linear-gradient(336deg, rgba(16,9,131,1) 0%, rgba(22,22,187,1) 35%, rgba(0,212,255,1) 100%); */
 }
 
 #root {
