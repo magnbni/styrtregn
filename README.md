@@ -24,7 +24,11 @@ Run the following commands to run the unit tests on Styrtregn:
 
 ```
 cd [directory of local repository]
-cd Prosjekt-1
-npm install
+cd Prosjekt -1
+npm install 
 npm run test
 ```
+
+## HTML Web storage api
+The application implements localstorage to save favourites. These are saved by pressing the heart-button.
+Sessionstorage storage is not implemented as it wasn't viewed as relevant to the application.

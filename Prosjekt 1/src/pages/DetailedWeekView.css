@@ -1,0 +1,31 @@
+.detcomp {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 10px;
+    width: 96%;
+    overflow-y: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.detrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between cells */
+    border-bottom: 2px solid black;
+}
+
+.detcell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* To distribute cell space evenly */
+    margin: 0 2%; /* Add some margin for space between cells */
+    color: white;
+}
+
+
+.weathericon {
+    width: 90%;
+}

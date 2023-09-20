@@ -1,9 +1,7 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import {
-  Routes, Route
-} from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Favourites from "./Favourite";
 import Root from "./routes/root";
@@ -13,9 +11,8 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
+    <div className="main-root">
       <Header />
-      <Favourites />
       <div>
         <QueryClientProvider client={queryClient}>
           <Routes>
@@ -25,7 +22,8 @@ function App() {
           <ReactQueryDevtools></ReactQueryDevtools>
         </QueryClientProvider>
       </div>
-    </>
+      <Favourites />
+    </div>
   );
 }
 
