@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import weekView from "./pages/WeekView";
 import "./App.css";
+import { FavouriteButton } from "./Favourite";
 
 function Fetcher() {
   const [city, setCity] = useState<string>();
@@ -50,6 +51,7 @@ function Fetcher() {
       </form>
     </div>
       <h1>{data?.location?.name}</h1>
+      {data?.location?.name && <FavouriteButton city={data.location.name} />}
       {isLoading ? <span>Loading...</span> : <></>}
       {data ? weekView(data) : <></>}
     </div>

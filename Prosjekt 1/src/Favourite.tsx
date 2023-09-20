@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import "./Favourite.css";
 
-export function FavouriteButton(isFavourite: boolean) {
+export function FavouriteButton({ city }: { city: string }) {
   // Use the useState hook to manage the favorite state
-  const [favourite, setFavorite] = useState(isFavourite);
+  const localFavourite: boolean = localStorage.getItem(city.toLowerCase())
+    ? true
+    : false;
+  const [favourite, setFavorite] = useState(localFavourite);
+
 
   const handleClick = () => {
-    // Toggle the favorite state when the button is clicked
-    setFavorite(!favourite);
+    // Toggle the favourite state when the button is clicked
+    if (localFavourite) {
+      localStorage.removeItem(city.toLowerCase());
+      
+    } else {
+      localStorage.setItem(city.toLowerCase(), "true");
+    }
+    setFavorite(!localFavourite);
   };
 
   return (
@@ -21,28 +31,36 @@ export function FavouriteButton(isFavourite: boolean) {
   );
 }
 
+function capitalizeFirstLetter(str: string) {
+  return str
+    .split(" ") // Split the string into an array of words
+    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+    .join(" "); // Join the words back together into a single string
+}
+
 export default function Favourites() {
+  const [cities] = useState(Object.keys(localStorage));
+
+  const favouriteCities: ReactElement<string, string>[] = [];
+
+  cities.forEach(function (key) {
+    favouriteCities.push(
+      <div className="favouriteElement">
+        <div className="favouriteName">
+        {<FavouriteButton city={key} />}
+          <h2>{capitalizeFirstLetter(key)}</h2>
+        </div>
+        <div className="favouriteForecast">
+          <h2>dummy element</h2>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <div className="favourites">
       <header className="favourite">Favoritter</header>
-      <div className="favouriteElement">
-        <div className="favouriteName">
-          {FavouriteButton(true)}
-          <h2>Oslo</h2>
-        </div>
-        <div className="favouriteForecast">
-          <h2>dummy element</h2>
-        </div>
-      </div>
-      <div className="favouriteElement">
-        <div className="favouriteName">
-          {FavouriteButton(true)}
-          <h2>Bergen</h2>
-        </div>
-        <div className="favouriteForecast">
-          <h2>dummy element</h2>
-        </div>
-      </div>
+      {favouriteCities}
     </div>
   );
 }
