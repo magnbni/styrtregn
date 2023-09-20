@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 
-const geoPath = 'https://eu1.locationiq.com/v1/search?key=pk.3e21916e151f4d42374fdc631eded07a'
+const geoPath = 'https://eu1.locationiq.com/v1/search'
 const metPath = 'https://api.met.no/weatherapi/locationforecast/2.0/compact'
 
 export const fetchMetData_incomplete_response = rest.get(metPath, async (_req, res, ctx) => {
@@ -10,6 +10,19 @@ export const fetchMetData_incomplete_response = rest.get(metPath, async (_req, r
             {
                 date: "DEFAULT VALUE"
             },
+        ])
+    )
+})
+export const fetchCity = rest.get(geoPath, async(_req, res, ctx) => {
+    return res(
+        ctx.status(200),
+        ctx.json([{
+            date: "2023-03-18",
+            rain: 5 ,
+            wind: 4,
+            maxTemp: 20,
+            symbol: "ICON",
+        }
         ])
     )
 })
