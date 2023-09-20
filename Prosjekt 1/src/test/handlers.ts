@@ -3,7 +3,7 @@ import { rest } from 'msw'
 const geoPath = 'https://eu1.locationiq.com/v1/search?key=pk.3e21916e151f4d42374fdc631eded07a'
 const metPath = 'https://api.met.no/weatherapi/locationforecast/2.0/compact'
 
-export const fetchMetData_incomplete_response = rest.get(metPath, async (req, res, ctx) => {
+export const fetchMetData_incomplete_response = rest.get(metPath, async (_req, res, ctx) => {
     return res(
         ctx.status(200),
         ctx.json([
@@ -28,7 +28,7 @@ export const fetchGeo_success_response = rest.get(geoPath, async (req, res, ctx)
     )
 })
 
-export const fetchMetData_empty_response = rest.get(metPath, async (req, res, ctx) => {
+export const fetchMetData_empty_response = rest.get(metPath, async (_req, res, ctx) => {
     return res(ctx.status(200), ctx.json([]))
 })
 
