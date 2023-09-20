@@ -16,8 +16,8 @@ function App() {
       <div>
         <QueryClientProvider client={queryClient}>
           <Routes>
-            <Route path="/" element={<Root />} />
-            <Route path="/:id" element={<Location />} />
+            <Route path="/project1" element={<Root />} />
+            <Route path="/project1/:id" element={<Location />} />
           </Routes>
           <Favourites />
           <ReactQueryDevtools></ReactQueryDevtools>
