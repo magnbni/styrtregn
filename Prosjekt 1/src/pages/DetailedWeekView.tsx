@@ -17,6 +17,7 @@ export default function DetWeekView() {
       </div>
       <div className="detrow">
         <p className="detcell">11.02.23 Mandag</p>
+        <p className="detcell">11.02.23 Mandag</p>
         <img src={clearsky} className="detcell" alt="icon" />
         <p className="detcell">Icon 2</p>
         <p className="detcell">Icon 3</p>
