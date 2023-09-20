@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
+    <div className="main-root">
       <Header />
       <Favourites />
       <div>
@@ -25,7 +25,7 @@ function App() {
           <ReactQueryDevtools></ReactQueryDevtools>
         </QueryClientProvider>
       </div>
-    </>
+    </div>
   );
 }
 
