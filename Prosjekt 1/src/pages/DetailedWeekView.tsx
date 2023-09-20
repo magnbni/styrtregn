@@ -1,7 +1,8 @@
 import "./DetailedWeekView.css";
 import clearsky from "../weathericons-svg/clearsky_day.svg";
+import FetchIcon from "../fetchIcon";
 
-export default function DetWeekView() {
+export default function DetailedWeekView() {
   return (
     <div className="detcomp">
       <div className="detrow">
@@ -16,10 +17,10 @@ export default function DetWeekView() {
       </div>
       <div className="detrow">
         <p className="detcell">11.02.23 Mandag</p>
-        <img src={clearsky} className="detcell" alt="icon" />
-        <p className="detcell">Icon 2</p>
-        <p className="detcell">Icon 3</p>
-        <p className="detcell">Icon 4</p>
+        {FetchIcon("clearsky_day")}
+        {FetchIcon("rainshowers_polartwilight")}
+        {FetchIcon("snowshowersandthunder_polartwilight")}
+        {FetchIcon("sleetshowersandthunder_day")}
         <p className="detcell">11/14 {"\u00B0"}C</p>
         <p className="detcell">1,2 mm</p>
         <p className="detcell">4 m/s</p>
