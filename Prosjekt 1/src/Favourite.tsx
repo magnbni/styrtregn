@@ -50,9 +50,6 @@ export default function Favourites() {
         {<FavouriteButton city={key} />}
           <h2>{capitalizeFirstLetter(key)}</h2>
         </div>
-        <div className="favouriteForecast">
-          <h2>dummy element</h2>
-        </div>
       </div>
     );
   });
