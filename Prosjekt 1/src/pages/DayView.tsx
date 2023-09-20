@@ -1,7 +1,7 @@
 
 import "./dayview.css"
 function DayView(props: Day) {
-    let hourly: JSONArray = props.day.hour
+    const hourly: JSONArray = props.day.hour
     return (
     <div className="scrollhours">
         {hourly.map((hour: Hour) => <>
