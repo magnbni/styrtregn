@@ -1,0 +1,27 @@
+.detcomp {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #EFE7BC;
+    border-radius: 10px;
+    height: 300px;
+    width: 100%;
+    overflow-y: auto;
+    justify-content: space-between; /* Space between rows */
+    padding: 4%;
+}
+
+.detrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between cells */
+}
+
+.detcell {
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* To distribute cell space evenly */
+    margin: 0 2%; /* Add some margin for space between cells */
+}
