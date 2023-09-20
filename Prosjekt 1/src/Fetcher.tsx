@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import weekView from "./pages/WeekView";
 import "./App.css";
 import { FavouriteButton } from "./Favourite";
+import HourlyView from "./components/HourlyView";
 
 function Fetcher() {
   const [city, setCity] = useState<string>();
@@ -54,6 +55,7 @@ function Fetcher() {
       {data?.location?.name && <FavouriteButton city={data.location.name} />}
       {isLoading ? <span>Loading...</span> : <></>}
       {data ? weekView(data) : <></>}
+      <HourlyView showBoolean={true}></HourlyView>
     </div>
   );
 }
