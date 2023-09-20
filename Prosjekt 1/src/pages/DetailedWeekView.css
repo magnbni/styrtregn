@@ -30,3 +30,15 @@
 .weathericon {
     width: 90%;
 }
+
+.overlay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 10%;
+    width: max-content;
+    overflow: scroll;
+    height: 500px;
+    background-color: rgb(109, 104, 193);
+}
