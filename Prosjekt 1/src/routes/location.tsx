@@ -44,7 +44,7 @@ export default function Location() {
         <div>
             <h1>{capitalizeFirstLetter(id ?? "")}{id && <FavouriteButton city={id} />}</h1>
         {statusMetCall === "success" && metData ? 
-        <HourlyView showBoolean={false} metData={metData?.properties} day={metData.properties.timeseries[10].time}/> 
+        <HourlyView metData={metData?.properties} day={metData.properties.timeseries[10].time}/> 
         : <h2>Loading...</h2>}
         {dayView != undefined && statusMetCall === "success" && metData ? 
         <DetailedWeekView dayView={dayView} rawData={metData?.properties}></DetailedWeekView> : 
