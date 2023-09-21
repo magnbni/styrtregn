@@ -74,6 +74,7 @@ button:active {
   margin: auto;
   padding: 0 1rem;
   margin: 4rem auto 0 auto;
+  overflow: scroll;
 }
 
 .icon {

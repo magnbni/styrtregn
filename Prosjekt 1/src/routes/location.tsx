@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../index.css"
 import useFetchCity from "../useFetchCity";
 import HourlyView from "../components/HourlyView";
 import DetailedWeekView from "../pages/DetailedWeekView";
 import { useParams } from "react-router-dom";
+import { FavouriteButton } from "../Favourite";
 
 export default function Location() {
-    const { id } = useParams();
+    const { id } = useParams<string>();
 
     const { statusMetCall, metData } = useFetchCity(id)
       
@@ -32,9 +33,16 @@ export default function Location() {
     useEffect(()=>{
     },[id])
 
+    function capitalizeFirstLetter(str: string) {
+        return str
+          .split(" ") // Split the string into an array of words
+          .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+          .join(" "); // Join the words back together into a single string
+      }
+
     return (
         <div>
-            <h1>{id}</h1>
+            <h1>{capitalizeFirstLetter(id ?? "")}{id && <FavouriteButton city={id} />}</h1>
         {statusMetCall === "success" && metData ? 
         <HourlyView showBoolean={false} metData={metData?.properties} day={metData.properties.timeseries[10].time}/> 
         : <h2>Loading...</h2>}

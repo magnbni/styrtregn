@@ -1,6 +1,5 @@
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Root from "./routes/root";
