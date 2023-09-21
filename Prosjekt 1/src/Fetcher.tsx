@@ -60,7 +60,12 @@ function Fetcher() {
         {isLoading ? <span>Loading...</span> : <></>}
       </div>
       <div className="comp">
-        <h1>{data?.location?.name}{data?.location?.name && <FavouriteButton city={data.location.name} />}</h1>
+        <h1>
+          {data?.location?.name}
+          {data?.location?.name && (
+            <FavouriteButton city={data.location.name} />
+          )}
+        </h1>
         {data ? weekView(data) : <></>}
       </div>
     </div>

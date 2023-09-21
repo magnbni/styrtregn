@@ -38,12 +38,11 @@ function capitalizeFirstLetter(str: string) {
 }
 
 export default function Favourites() {
-    const [cities] = useState(Object.keys(localStorage));
+  const [cities] = useState(Object.keys(localStorage));
 
   const favouriteCities: ReactElement<string, string>[] = [];
 
   cities.forEach(function (key) {
-
     favouriteCities.push(
       <div className="favouriteElement">
         <div className="favouriteName">
