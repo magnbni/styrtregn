@@ -13,12 +13,12 @@ export default function DetailedWeekView(props: {
 
   const DAYS: { [id: number]: string } = {
     1: "Mandag",
-    2: "Tirdag",
+    2: "Tirsdag",
     3: "Onsdag",
     4: "Torsdag",
     5: "Fredag",
     6: "Lørdag",
-    7: "Søndag",
+    0: "Søndag",
   };
 
   // Step 1: Define state variables to manage the popup
@@ -45,7 +45,7 @@ export default function DetailedWeekView(props: {
         <p className="detcell">Min/Max. temp.</p>
         <p className="detcell">Nedbør</p>
         <p className="detcell">Vind</p>
-        <p className="detcell"></p>
+        <p className="detcell">Oversikt</p>
       </div>
       {dayView?.map((day) => (
         <div className="detrow">
