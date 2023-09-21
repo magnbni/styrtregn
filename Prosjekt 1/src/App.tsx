@@ -1,6 +1,5 @@
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Root from "./routes/root";
@@ -17,9 +16,9 @@ function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (city) {
-        navigate(`/project1/${city}`);
+      navigate(`/project1/${city}`);
     } else {
-        console.log("Cannot pass undefined")
+      console.log("Cannot pass undefined");
     }
   };
 
@@ -33,19 +32,19 @@ function App() {
             <div className="search">
               <form onSubmit={(e) => handleSubmit(e)}>
                 <label>
-                <input
+                  <input
                     type="text"
                     className="searchbar"
                     placeholder="Skriv inn en by"
                     onChange={(e) => {
-                    setCity(e.target.value);
+                      setCity(e.target.value);
                     }}
-                ></input>
+                  ></input>
                 </label>
                 <input type="submit" className="submitButton"></input>
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
           <Routes>
             <Route path="/project1" element={<Root />} />
             <Route path="/project1/:id" element={<Location />} />

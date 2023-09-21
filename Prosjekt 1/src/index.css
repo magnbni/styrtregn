@@ -74,6 +74,7 @@ button:active {
   margin: auto;
   padding: 0 1rem;
   margin: 4rem auto 0 auto;
+  overflow: scroll;
 }
 
 .icon {
@@ -83,6 +84,10 @@ button:active {
   background-color: #395dd3;
   color: white;
   margin: 0 auto;
+}
+
+h1 span {
+  display: inline-block;
 }
 
 .icon_img {
