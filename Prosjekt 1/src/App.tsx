@@ -1,10 +1,10 @@
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Header from "./Header";
 import Root from "./routes/root";
 import Location from "./routes/location";
 import { useState } from "react";
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
