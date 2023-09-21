@@ -1,7 +1,7 @@
 import FetchIcon from "../FetchIcon";
-import "./DetailedWeekView.css";
+import "./WeekView.css";
 import { DayView, Properties } from "../types";
-import HourlyView from "../components/HourlyView";
+import HourlyView from "./HourlyView";
 import { useState } from "react";
 
 export default function DetailedWeekView(props: {

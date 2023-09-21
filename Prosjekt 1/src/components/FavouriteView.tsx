@@ -1,5 +1,5 @@
-import DetailedWeekView from "./pages/DetailedWeekView";
-import useFetchCity from "./useFetchCity";
+import DetailedWeekView from "./WeekView";
+import useFetchCity from "../useFetchCity";
 
 function FavoriteView(props: { city: string }) {
   const city = props.city;

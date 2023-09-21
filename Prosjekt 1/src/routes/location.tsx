@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import "../index.css";
 import useFetchCity from "../useFetchCity";
-import DetailedWeekView from "../pages/DetailedWeekView";
+import DetailedWeekView from "../components/WeekView";
 import { useParams } from "react-router-dom";
-import { FavouriteButton } from "../Favourite";
+import { FavouriteButton } from "../components/Favourite";
 
 export default function Location() {
   const { id } = useParams<string>();
