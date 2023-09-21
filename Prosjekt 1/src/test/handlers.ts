@@ -46,4 +46,4 @@ export const fetchMetData_empty_response = rest.get(metPath, async (_req, res, c
 })
 
 
-export const handlers = [fetchMetData_empty_response]
+export const handlers = [fetchMetData_empty_response, fetchGeo_success_response]
