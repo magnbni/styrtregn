@@ -25,7 +25,7 @@ it("Should change state when clicked on", async () => {
       <Favorite />
     </QueryClientProvider>);
 
-  const button = wrapper.getByAltText("favourite");
+  const button = wrapper.getByPlaceholderText("favourite");
   const icon = wrapper.getByAltText('icon');
   expect(button).toBeTruthy;
   expect(icon.id).toBe("deselected");
