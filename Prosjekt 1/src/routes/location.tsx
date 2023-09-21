@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "../index.css"
 import useFetchCity from "../useFetchCity";
-import HourlyView from "../components/HourlyView";
 import DetailedWeekView from "../pages/DetailedWeekView";
 import { useParams } from "react-router-dom";
 import { FavouriteButton } from "../Favourite";
