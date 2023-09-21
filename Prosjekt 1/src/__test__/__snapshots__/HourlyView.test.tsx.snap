@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`The HourlyView component should output the same HTML with the same props 1`] = `
+<div
+  className="overlay"
+>
+  <h2>
+    Været 
+    2021-10-10
+  </h2>
+  <div
+    className="fluid-table"
+  >
+    <div
+      className="table-container"
+    >
+      <table
+        className="table2"
+      >
+        <thead>
+          <tr>
+            <td>
+              Klokkeslett
+            </td>
+            <td>
+              Vær
+            </td>
+            <td>
+              Temperatur
+            </td>
+            <td>
+              Nedbør mm
+            </td>
+            <td>
+              Vind m/s
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <React.Fragment>
+            <tr>
+              <td>
+                09:00
+              </td>
+              <td
+                style={
+                  {
+                    "width": "15%",
+                  }
+                }
+              >
+                <img
+                  alt="icon"
+                  className="weathericon"
+                  src="/project1/src/weathericons-svg/rainshowers_day.svg"
+                />
+              </td>
+              <td>
+                8.9
+                 °C
+              </td>
+              <td>
+                0.3
+              </td>
+              <td>
+                2.4
+              </td>
+            </tr>
+          </React.Fragment>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
