@@ -86,6 +86,10 @@ button:active {
   margin: 0 auto;
 }
 
+h1 span {
+  display: inline-block;
+}
+
 .icon_img {
   width: 2rem;
   height: 2rem;

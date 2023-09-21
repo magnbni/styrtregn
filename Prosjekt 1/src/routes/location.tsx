@@ -41,7 +41,10 @@ export default function Location() {
 
     return (
         <div>
-            <h1>{capitalizeFirstLetter(id ?? "")}{id && <FavouriteButton city={id} />}</h1>
+            <h1>
+                <span>{id && <FavouriteButton city={id} />}</span>
+                <span>{capitalizeFirstLetter(id ?? "")}</span>
+            </h1>
         {dayView != undefined && statusMetCall === "success" && metData ? 
         <DetailedWeekView dayView={dayView} rawData={metData?.properties}></DetailedWeekView> : 
         <></>}
