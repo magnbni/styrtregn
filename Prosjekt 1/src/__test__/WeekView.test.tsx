@@ -30,6 +30,7 @@ describe('DetailedWeekView test', ()=>{
         expect(hourlyViewButton).toBeTruthy()
         act(()=>{hourlyViewButton.click()})
         if(props.dayView){
+            // Testing if the popup header text now exists
             const isShowing = nowWithButton.getByText(`Været ${props.dayView[0].date}`)
             expect(isShowing).toBeTruthy()
         } else {
