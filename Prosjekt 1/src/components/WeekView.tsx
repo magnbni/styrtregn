@@ -63,7 +63,7 @@ export default function DetailedWeekView(props: {
           <p className="detcell">{day.rain} mm</p>
           <p className="detcell">{day.wind} m/s</p>
           <p className="detcell">
-            <button onClick={() => showPopup(day.date)}>Se været</button>
+            <button onClick={() => showPopup(day.date)} placeholder="hourView">Se været</button>
           </p>
         </div>
       ))}

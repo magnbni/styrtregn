@@ -1,6 +1,7 @@
 import { rest } from 'msw'
+import { defaultMetData } from './constants'
 
-const geoPath = 'https://eu1.locationiq.com/v1/search'
+const geoPath = 'https://eu1.locationiq.com/v1/search/:q'
 const metPath = 'https://api.met.no/weatherapi/locationforecast/2.0/compact'
 
 export const fetchMetData_incomplete_response = rest.get(metPath, async (_req, res, ctx) => {
@@ -13,17 +14,21 @@ export const fetchMetData_incomplete_response = rest.get(metPath, async (_req, r
         ])
     )
 })
-export const fetchCity = rest.get(geoPath, async(_req, res, ctx) => {
+export const fetchCity = rest.get("https://eu1.locationiq.com/v1/search", async(req, res, ctx) => {
+    const city = req.url.searchParams.get('q')
+    
+    if(city == 'Oslo')
     return res(
         ctx.status(200),
-        ctx.json([{
-            date: "2023-03-18",
-            rain: 5 ,
-            wind: 4,
-            maxTemp: 20,
-            symbol: "ICON",
-        }
+        ctx.json([defaultMetData
         ])
+    )
+})
+
+export const fetchGeo_empty_response = rest.get("https://eu1.locationiq.com/v1/search", async(_req, res, ctx) => {
+    return res(
+        ctx.status(400),
+        ctx.json([{}])
     )
 })
 
@@ -46,4 +51,4 @@ export const fetchMetData_empty_response = rest.get(metPath, async (_req, res, c
 })
 
 
-export const handlers = [fetchMetData_empty_response]
+export const handlers = [fetchMetData_empty_response, fetchGeo_empty_response]

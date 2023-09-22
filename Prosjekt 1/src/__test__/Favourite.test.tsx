@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { render } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 import FavoriteView from "../components/FavouriteView";
 import Favorite from "../components/Favourite";
 import { mswServer } from "../test/mockHTTPserver";
@@ -14,7 +14,7 @@ it("Favourite should render", async () => {
       <FavoriteView city="Oslo"/>
     </QueryClientProvider>);
 
-  expect(wrapper).toBeTruthy;
+  expect(wrapper).toBeDefined()
 });
 
 it("Should change state when clicked on", async () => {
@@ -29,6 +29,6 @@ it("Should change state when clicked on", async () => {
   const icon = wrapper.getByAltText('icon');
   expect(button).toBeTruthy;
   expect(icon.id).toBe("deselected");
-  button.click();
+  act(() => {button.click()});
   expect(icon.id).toBe("selected");
 });
