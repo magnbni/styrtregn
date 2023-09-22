@@ -32,3 +32,7 @@ npm run test
 ## HTML Web storage api
 The application implements localstorage to save favourites. These are saved by pressing the heart-button.
 Sessionstorage storage is not implemented as it wasn't viewed as relevant to the application.
+
+
+## Bugs on virtual machine
+After loading the project on the VM, there is a bug present in the favorite icons. When you search for a new city, without going back to the home page, the value of the button will not change. Therefore, a city might appear as a favorite even if it is in fact not a favorite. This works locally, but not on the VM. 
