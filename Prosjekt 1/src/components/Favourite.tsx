@@ -20,11 +20,11 @@ export function FavouriteButton({ city }: { city: string }) {
   };
 
   return (
-    <button className="favourite" onClick={handleClick}>
+    <button className="favourite" placeholder="favourite" onClick={handleClick}>
       {favourite ? (
-        <img src={"heart_filled.svg"} className="favourite" alt="icon" />
+        <img src={"heart_filled.svg"} className="favourite" alt="icon" id="selected"/>
       ) : (
-        <img src={"heart.svg"} className="favourite" alt="icon" />
+        <img src={"heart.svg"} className="favourite" alt="icon" id="deselected"/>
       )}
     </button>
   );
